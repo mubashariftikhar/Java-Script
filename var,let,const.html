@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advance JS</title>
+    <script>
+      // Tempelate String
+
+      // let first = "Mohid";
+      // let last = " Khan";
+      // function fullname(first, last) {
+      //   return `${first} ${last}`;
+      // }
+      // let out = `Hello ${fullname(first, last)}`;
+      // document.write(out);
+      // console.log(out);
+      //-----------------------------------------------------------------------------
+      // Arrow Function
+
+      // let hi = (name) => `Welcome ${name}`;
+      // console.log(hi("Mohid"));
+      // console.log(typeof hi);
+      //---------------------------------------------------------------------------------
+      // REST OPERTAOR
+
+      // function sum(name, course, ...args) {
+      //   console.log(arguments);
+      //   document.write(`Hello ${name}  of ${course}: `);
+      //   let sum = 0;
+      //   for (let i in args) {
+      //     sum += args[i];
+      //   }
+      //   document.write(sum + "<br>");
+      // }
+      // sum("Mohid", "B Tech", 20, 30, 40);
+      // sum("Khan", "BA", 30, 40);
+      // sum("Ali", "B Tech", 20, 30, 40, 20, 50, 88);
+      // sum(20, 30);
+      //-------------------------------------------------------------------------
+
+      // SPREAD OPERATOR
+
+      // function sum(name, ...args) {
+      //   console.log(arguments);
+      //   document.write(`Hello ${name}  : `);
+      //   let sum = 0;
+      //   for (let i in args) {
+      //     sum += args[i];
+      //   }
+      //   document.write(sum + "<br>");
+      // }
+      // let arr = [44, 55, 66];
+      // sum("Mohid", ...arr);
+      //-----------------------
+      // var arr1 = [10, 20, 30, 40];
+      // var arr2 = [50, 60];
+      // var arr3 = [5, ...arr1, ...arr2, 65];
+      // console.log(arr3);
+      //-------------------------------------------------------------------------
+
+      // var obj1 = {
+      //   name: "Mohid Khan",
+      //   course: "BS",
+      // };
+
+      // var obj2 = {
+      //   age: 22,
+      // };
+
+      // var obj3 = { ...obj1, ...obj2 };
+      // console.log(obj3);
+      //--------------------------------------------------------------------------------
+
+      // OBJECT LITERALS
+      //  EXAMPLE  1
+      // let name = "Mohid Khan";
+      // let course = "BSCS";
+
+      // let obj = {
+      //   name,
+      //   course,
+      // };
+      // console.log(obj);
+      //----------------------------------
+      // EXAMPLE 2 USE VARIABLE AS A PROPERTY NAME
+      // let n = "student";
+      // var obj = {
+      //   [n + "name"]: "Mohid",
+      //   course: "Bs",
+      //   detail: function () {
+      //     return `${this.studentname} ia a student of ${this.course}`;
+      //   },
+      // };
+      // console.log(obj);
+      // console.log(obj.detail());
+      //----------------------------------
+
+      // EXAMPLE 3
+      // let n = "student";
+      // var obj = {
+      //   [n + "name"]: "Mohid",
+      //   course: "Bs",
+      //   detail() {
+      //     return `${this.studentname} ia a student of ${this.course}`;
+      //   },
+      // };
+      // console.log(obj);
+      // console.log(obj["detail"]());
+      //----------------------------------
+
+      // EXAMPLE 4
+      // let name = "Mohid";
+      // let course = "BSCS";
+
+      // function student(name, course) {
+      //   return { name, course };
+      // }
+      // console.log(student(name, course));
+      //-----------------------------------------------------------------------------
+
+      // DISTRUCTURING ARRAY
+
+      // let user = ["hi", 23, "Mohid", ["Male", 25000]];
+
+      // let [message, age, name, [gender, salary]] = user;
+
+      // document.write(name);
+      // console.log(message);
+      // console.log(age);
+      // console.log(name);
+      // console.log(gender);
+      // console.log(salary);
+      //-----------------------------------------------------------------------------
+      //                OOP CONCEPT
+      // class hello {
+      //   message() {
+      //     console.log("Hi Mohid");
+      //   }
+      //   sorry() {
+      //     console.log("Sorry Janu");
+      //   }
+      // }
+      // let a = new hello();
+      // a.message();
+      // let b = new hello();
+      // b.sorry();
+
+      //---------------- constructor/static
+
+      // class student {
+      //   constructor(name, age) {
+      //     this.stdname = name;
+      //     this.stdage = age;
+      //     console.log("Hi I am Constructor");
+      //   }
+      //   hello() {
+      //     document.write(`heloo  ${this.stdname} your age is ${this.stdage}`);
+      //   }
+      //   static staticMethod() {
+      //     console.log("I am Static");
+      //   }
+      // }
+      // let a = new student("Mohid ", 23);
+      // // a.name = "Mohid Khan";
+      // a.hello();
+      // student.staticMethod();
+
+      //---------------- INHERITANCE
+      // example 1
+      // class employee {
+      //   constructor(name) {
+      //     console.log("Constructor : Employee" + name);
+      //   }
+      // }
+      // class manager extends employee {}
+      // let a = new manager("Mohid");
+      //example 2
+      class employee {
+        constructor(name, age, salary) {
+          this.empName = name;
+          this.empAge = age;
+          this.empSalary = salary;
+          console.log("Constructor : Employee");
+        }
+        info() {
+          document.write(
+            `<h3> Employee Class </h3>
+               Name:${this.empName}<br>
+                Age is : ${this.empAge} <br>
+                 Salary is :${this.empSalary}`
+          );
+        }
+      }
+      class manager extends employee {
+        info() {
+          let ta = 200;
+          let pa = 200;
+          let totalSalary = this.salary + ta + pa;
+          document.write(
+            `<h3> Manager Class </h3>
+               Name:${this.empName}<br>
+                Age is : ${this.empAge} <br>
+                 Salary is :${this.totalSalary}`
+          );
+        }
+      }
+      let a = new manager("Mohid", 23, 15000);
+      let b = new employee("Khan", 20, 10000);
+      a.info();
+      b.info();
+    </script>
+  </head>
+  <body>
+    <h1>Advance Js</h1>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises .all()</title>
+    <script>
+      let p1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log("The First Promise has Resolve");
+          resolve(10);
+        }, 1 * 1000);
+      });
+
+      let p2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log("The Second Promise has Resolve");
+          resolve(20);
+        }, 2 * 1000);
+      });
+
+      let p3 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log("The Third Promise has Resolve");
+          resolve(30);
+        }, 3 * 1000);
+      });
+
+      Promise.all([p1, p2, p3])
+        .then((result) => {
+          console.log(`Results ${result}`);
+        })
+        .catch((error) => {
+          console.log(`Error ${error}`);
+        });
+    </script>
+  </head>
+  <body></body>
+</html>
